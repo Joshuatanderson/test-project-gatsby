@@ -26,9 +26,9 @@ const IndexPage = () => {
           <p className="subtitle">{page.description}</p>
         </div>
         <h2 className="h2">Job Title</h2>
+        <DataFilter titles={job_titles} />
       </section>
       <PeopleView people={people}></PeopleView>
-      <DataFilter titles={job_titles} />
     </main>
     // <main className={`py-16 lg:py-24 text-gray-900`}>
     //   <div className={`container xl:max-w-screen-lg flex flex-wrap`}>

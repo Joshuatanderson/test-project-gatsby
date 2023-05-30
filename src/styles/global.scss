@@ -108,7 +108,7 @@ TEXT
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 24px;
+  // line-height: 24px;
 
   color: #6b7280;
 
@@ -152,4 +152,42 @@ TEXT
   font-size: 14px;
   line-height: 125%;
   color: $grey;
+}
+
+.button-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  color: $grey;
+}
+
+/**********
+BUTTONS
+**********/
+.button-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.button {
+  @extend .button-text;
+
+  background-color: transparent; /* Disable platform-specific styling */
+  border: none;
+  display: flex;
+  text-align: center;
+  padding: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: $light-grey;
+  }
+  &.chosen {
+    background-color: $blue;
+    color: $white;
+  }
+}
+.chosen {
+  background-color: blue;
 }
