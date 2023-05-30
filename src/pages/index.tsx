@@ -1,7 +1,9 @@
 import * as React from 'react';
+import { DataFilter } from '../components/DataFilter';
 import { PeopleView } from '../components/People';
 // A JSON object with all content for the page
 import data from '../content/index';
+import { Data } from '../types/data';
 
 /**
  * The classes in this file are provided by Tailwind which is included and can
@@ -13,22 +15,20 @@ import data from '../content/index';
 
 const IndexPage = () => {
   // Each type of content
-  const { page, people, job_titles } = data;
+  const { page, people, job_titles } = data as Data;
+  console.log(job_titles);
 
   return (
     <main className="grid-container">
       <section>
         <div className="team-block">
-          <h1 className="h1">Our Team</h1>
-          <p className="subtitle">
-            Nulla quam felis, enim faucibus proin velit, ornare id pretium.
-            Augue ultrices sed arcu condimentum vestibulum suspendisse. Volutpat
-            eu faucibus vivamus eget bibendum cras.
-          </p>
+          <h1 className="h1">{page.heading}</h1>
+          <p className="subtitle">{page.description}</p>
         </div>
         <h2 className="h2">Job Title</h2>
       </section>
-      <PeopleView people={data.people}></PeopleView>
+      <PeopleView people={people}></PeopleView>
+      <DataFilter titles={job_titles} />
     </main>
     // <main className={`py-16 lg:py-24 text-gray-900`}>
     //   <div className={`container xl:max-w-screen-lg flex flex-wrap`}>

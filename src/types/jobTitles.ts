@@ -1,1 +1,2 @@
-export type JobTitles = 'Quality Engineer' | 'Field Engineer' | 'Test Engineer';
+type JobTitleOptions = 'Quality Engineer' | 'Field Engineer' | 'Test Engineer';
+export type JobTitles = JobTitleOptions[];

@@ -8,10 +8,10 @@ interface PeopleProps {
 
 export const PeopleView = ({ people }: PeopleProps) => {
   return (
-    <div className="people-cont">
+    <section className="people-cont">
       {people.map((person, i) => (
         <Person person={person} key={`person-${i}`} />
       ))}
-    </div>
+    </section>
   );
 };
