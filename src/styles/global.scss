@@ -1,0 +1,169 @@
+//normalize
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// COLORS
+$dark-grey: #111827; //headings
+$grey: #6b7280; // body text
+$light-grey: #d1d5db; // borders, button hover
+$blue: #1e40af; // active button
+$white: #ffffff;
+
+/**********
+GRID LAYOUT
+***********/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 'text cards cards';
+  grid-gap: 32px;
+  margin: 96px 15px 0px 15px;
+}
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+}
+
+.people-cont {
+  grid-area: cards;
+}
+
+// @media (max-width: 768px) {
+//   .grid-container {
+//     grid-template-columns: 1fr;
+//   }
+//   .people-cont {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+/**********
+TEXT
+**********/
+
+// defaults
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+}
+
+/***********
+TEAM SECTION
+***********/
+.team-block {
+  margin: 0 0 32px 0;
+  grid-area: text;
+}
+
+/***********
+CARD
+***********/
+.card {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  // max-width: 200px;
+  border: $light-grey solid 1px;
+  border-inline: true;
+  border-radius: 8px;
+  img {
+    border-radius: 8px;
+  }
+}
+
+.card-text-cont {
+  margin: 16px 16px 32px 16px;
+}
+
+// .grid-container:nth-child(even) {
+//   grid-column: 2 / 3;
+// }
+
+// .grid-container:nth-child(odd) {
+//   grid-column: 3 / 4;
+// }
+
+/***********
+TEXT
+************/
+
+.h1 {
+  /* Heading */
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 110%;
+  /* identical to box height, or 40px */
+
+  color: $dark-grey;
+
+  /* Inside auto layout */
+  flex: none;
+}
+
+.subtitle {
+  /* Description */
+
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #6b7280;
+
+  /* Inside auto layout */
+  flex: none;
+}
+
+.h2 {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  /* identical to box height, or 22px */
+
+  color: $dark-grey;
+
+  /* Inside auto layout */
+  align-self: stretch;
+}
+
+.name {
+  font-family: 'Helvetica Neue';
+  font-style: bold;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: $dark-grey;
+}
+
+.subtitle2 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.03em;
+  color: $grey;
+}
+
+.bio {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 125%;
+  color: $grey;
+}
